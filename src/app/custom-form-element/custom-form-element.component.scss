@@ -1,0 +1,10 @@
+.ng-dirty {
+    &.ng-invalid {
+        border-color: red;
+    }
+}
+
+.invalid__message {
+    font-size: 14px;
+    color: red;
+}

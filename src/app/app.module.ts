@@ -9,6 +9,7 @@ import { CustomFormElementComponent } from './custom-form-element/custom-form-el
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailValidatorDirective } from './email-validator.directive';
 import { RepeatPasswordValidatorDirective } from './repeat-password-validator.directive';
+import { CustomToggleComponent } from './custom-toggle/custom-toggle.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RepeatPasswordValidatorDirective } from './repeat-password-validator.di
     TemplateDrivenFormComponent,
     CustomFormElementComponent,
     EmailValidatorDirective,
-    RepeatPasswordValidatorDirective
+    RepeatPasswordValidatorDirective,
+    CustomToggleComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,8 @@ export class TemplateDrivenFormComponent implements OnInit {
     this.form = {
       email: '',
       password: '',
-      repeatPassword: ''
+      repeatPassword: '',
+      direction: ''
     };
   }
 

@@ -1,0 +1,13 @@
+<div>
+  <label>
+    <input type="radio" name="toggle" value="Using" [checked]="value === 'Using'" (change)="onChange($event)">
+    <span>Using</span>
+  </label>
+</div>
+
+<div>
+  <label>
+    <input type="radio" name="toggle" value="Supplying" [checked]="value === 'Supplying'" (change)="onChange($event)">
+    <span>Supplying</span>
+  </label>
+</div>
