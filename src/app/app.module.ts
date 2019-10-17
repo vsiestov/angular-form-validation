@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { CustomFormElementComponent } from './custom-form-element/custom-form-element.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmailValidatorDirective } from './email-validator.directive';
+import { RepeatPasswordValidatorDirective } from './repeat-password-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveFormComponent,
     TemplateDrivenFormComponent,
-    CustomFormElementComponent
+    CustomFormElementComponent,
+    EmailValidatorDirective,
+    RepeatPasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

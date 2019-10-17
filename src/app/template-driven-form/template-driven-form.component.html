@@ -1,1 +1,78 @@
-<p>template-driven-form works!</p>
+<h1>Template-Drive forms</h1>
+
+<form #templateForm="ngForm">
+  <div>
+    <label for="input-email">E-Mail</label>
+    <input
+      id="input-email"
+      type="email"
+      name="email"
+      placeholder="Email"
+      [(ngModel)]="form.email"
+      required
+      #email="ngModel"
+      appEmailValidator
+    >
+
+    <div class="invalid__message" *ngIf="email && email.invalid && email.dirty">
+      <ng-container *ngIf="email.errors.required">
+        This field is required
+      </ng-container>
+
+      <ng-container *ngIf="email.errors.email">
+        Please provide a correct email address
+      </ng-container>
+    </div>
+  </div>
+
+  <div>
+    <label for="input-password">Password</label>
+    <input
+      type="password"
+      id="input-password"
+      name="password"
+      [(ngModel)]="form.password"
+      pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$"
+      required
+      #password="ngModel"
+    >
+
+    <div class="invalid__message" *ngIf="password.invalid && password.dirty">
+      <ng-container *ngIf="password.errors.required">
+        This field is required
+      </ng-container>
+
+      <ng-container *ngIf="password.errors.pattern">
+        Password must be at least 4 characters, no more than 8 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit.
+      </ng-container>
+    </div>
+  </div>
+
+  <div>
+    <label for="input-repeat-password">Repeat Password</label>
+    <input
+      type="password"
+      id="input-repeat-password"
+      name="repeatPassword"
+      [(ngModel)]="form.repeatPassword"
+      required
+      #repeatPassword="ngModel"
+      appRepeatPasswordValidator
+    />
+
+    <div class="invalid__message" *ngIf="repeatPassword.invalid && repeatPassword.dirty">
+      <ng-container *ngIf="repeatPassword.errors.required">
+        This field is required
+      </ng-container>
+
+      <ng-container *ngIf="repeatPassword.errors.repeatPassword">
+        You passwords are not equal
+      </ng-container>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="templateForm.invalid">Submit</button>
+  </div>
+
+</form>
